@@ -5,7 +5,7 @@ X_train = pd.read_csv('data/processed_data/X_train.csv')
 X_test = pd.read_csv('data/processed_data/X_test.csv')
 
 if 'date' in X_train.columns:
-    reference_date = pd.to_datetime('2000-01-01')  # Reference date can be anything you want
+    reference_date = pd.to_datetime('2000-01-01')
     X_train['date'] = pd.to_datetime(X_train['date'])
     X_train['date'] = (X_train['date'] - reference_date).dt.days
     
