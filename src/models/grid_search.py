@@ -1,4 +1,5 @@
 import pandas as pd
+import joblib
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import GridSearchCV
 from sklearn.preprocessing import StandardScaler
@@ -23,5 +24,5 @@ param_grid = {'fit_intercept': [True, False]}
 grid_search = GridSearchCV(model, param_grid, cv=5)
 grid_search.fit(X_train_scaled, y_train)
 
-import joblib
 joblib.dump(grid_search.best_params_, 'models/best_params.pkl')
+joblib.dump(grid_search.best_estimator_, 'models/best_model.pkl')

@@ -11,4 +11,4 @@ model = LinearRegression(**best_params)
 
 model.fit(X_train_scaled, y_train)
 
-joblib.dump(model, 'models/best_model.pkl')  # Save the trained model here
+joblib.dump(model, 'models/trained_model.pkl')
